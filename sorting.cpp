@@ -11,13 +11,15 @@ void insertion_sort(int arr[]);
 int main()
 {
     int arr[] = {8, 9, 5, 6, 4, 6, 5, 2, 3, 2, 12, 56, 89};
+    int size = sizeof(arr) / sizeof(arr[0]);
     show(arr);
     // bubble_sort(arr);
     // selection_sort(arr);
-    insertion_sort(arr);
+    // insertion_sort(arr);
     show(arr);
 }
 
+// For printing all the elements
 void show(int arr[])
 {
     for (int i = 0; i < n; i++)
@@ -27,7 +29,7 @@ void show(int arr[])
     cout << "\n";
 }
 
-
+// Bubble sort
 void bubble_sort(int arr[])
 {
     for (int i = 0; i < n; i++)
@@ -40,6 +42,7 @@ void bubble_sort(int arr[])
     }
 }
 
+// Selection sort
 void selection_sort(int arr[])
 {
     int min_idx;
@@ -55,6 +58,7 @@ void selection_sort(int arr[])
     }
 }
 
+// Insertion sort
 void insertion_sort(int arr[])
 {
     int temp,j;
@@ -69,5 +73,17 @@ void insertion_sort(int arr[])
             j -= 1;
         }
         arr[j + 1] = temp;
+    }
+}
+
+void merge_sort(int arr[], int l, int r)
+{
+    if(l < r)
+    {
+        int m = l + (l - r) / 2;
+        merge_sort(arr, l, m);
+        merge_sort(arr, m + 1, r);
+
+        merge_arr(arr, l, m, r);
     }
 }
