@@ -44,7 +44,7 @@ void jobSequencing(Job arr[], int num)
 
     for (int i = 0; i < num; i++)
     {
-        for (int j = min(num, arr[i].deadline); j >= 0; j--)
+        for (int j = min(num, arr[i].deadline)-1; j >= 0; j--)
         {
             if(slot[j] == false)
             {
