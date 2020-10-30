@@ -14,7 +14,7 @@ int main()
             for (int j = i * i; j <= n; j += i)
                 is_prime[j] = false;
         }
-    }
+    } 
 
     for (int i = 0; i < n+1 ;i++)
     {
